@@ -20,10 +20,10 @@ export default function Header() {
                 <a href="#" className={s.menuLink}>О нас</a>
               </li>
               <li className={s.menuItem}>
-                <a href="#" className={s.menuLink}>Приложение</a>
+                <a href="#" className={s.menuLink}>Сотрудничество</a>
               </li>
               <li className={s.menuItem}>
-                <a href="#" className={s.menuLink}>Сотрудничество</a>
+                <a href="#" className={s.menuLink}>Приложение</a>
               </li>
             </ul>
           </div>

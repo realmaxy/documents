@@ -1,0 +1,61 @@
+@import '../../sass/mixin';
+
+.cooperation {
+  display: flex;
+  align-items: center;
+  margin: 50px 0px 150px 0px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  margin: 40px 0px 30px 0px;
+  line-height: 25px;
+}
+
+.button {
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  height: 50px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@include lg {
+  .image {
+    width: 300px;
+  }
+}
+
+@include md {
+  .cooperation {
+    flex-direction: column;
+  }
+  .imageBlock {
+    order: 1;
+  }
+  .content {
+    order: 2;
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+  }
+  .button {
+    margin: 0 auto;
+  }
+  .image {
+    width: 400px;
+  }
+}
+
+@include sm {
+  .image {
+    width: 280px;
+  }
+}
+

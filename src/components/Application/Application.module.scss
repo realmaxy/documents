@@ -1,0 +1,19 @@
+.application {
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+
+}
+
+.text {
+  font-size: 30px;
+  width: 40%;
+  margin: 50px 0px 50px 0px;
+}
