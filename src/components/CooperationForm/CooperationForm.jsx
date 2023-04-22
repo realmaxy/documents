@@ -11,11 +11,16 @@ export default function CooperationForm() {
   
   const {register, formState:{errors}, handleSubmit, reset} = useForm({mode:"onBlur"})
 
-  const onSubmit = (data) => {
-    data = {...data, service: value}
+  const onSubmit = async(data) => {
+    data = {...data, description: value}
     reset()
     setValue('')
     alert(JSON.stringify(data))
+    await fetch('http://lkjhytre.pythonanywhere.com/auth', {method: "POST",
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: data})
   }
   
 
@@ -52,10 +57,10 @@ export default function CooperationForm() {
           <form onSubmit={handleSubmit(onSubmit)} className={s.coopForm}>
             <div className={s.inputBlock}>
               <TextField className={s.inputStr} label="Название организации" 
-                {...register("orgName", {required: "*Поле обязательно к заполнению"})}
+                {...register("name", {required: "*Поле обязательно к заполнению"})}
               />
               <div>
-                {errors?.orgName && <p className={s.errorParagraph}>{errors?.orgName?.message}</p>}
+                {errors?.name && <p className={s.errorParagraph}>{errors?.name?.message}</p>}
               </div>
             </div>
             <div className={s.inputBlock}>

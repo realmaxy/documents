@@ -3,6 +3,8 @@
 .application {
   display: flex;
   align-items: center;
+  padding: 100px 0px 0px 0px;
+  z-index: 1;
 }
 
 .buttons {
@@ -37,6 +39,7 @@
   position: absolute;
   top: 15%;
   left: 23%;
+  z-index: 1;
 }
 
 @include lg {

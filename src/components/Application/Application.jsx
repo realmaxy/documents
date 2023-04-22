@@ -8,9 +8,9 @@ import logo from '../../assets/logo.png'
 export default function Application() {
   return (
     <div className='container'>
-      <div className={s.application}>
+      <div className={s.application} id='application'>
         <div className={s.content}>
-          <h1 className={s.title}>Приложение</h1>
+          <h1 className={s.title} >Приложение</h1>
           <p className={s.text}>Скачивайте наше приложение для управления проектом.</p>
           <div className={s.buttons}>
             <a href="#">

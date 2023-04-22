@@ -2,7 +2,7 @@ import s from './FirstScreen.module.scss'
 
 export default function FirstScreen() {
   return (
-    <div className={s.wrapper}>
+    <div className={s.wrapper} id='about'>
       <div className={s.firstScreen}>
         <div className='container'> 
           <div className={s.content}>
