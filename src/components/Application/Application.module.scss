@@ -1,3 +1,5 @@
+@import '../../sass/mixin';
+
 .application {
   display: flex;
   align-items: center;
@@ -8,12 +10,66 @@
   flex-direction: column;
 }
 
-.title {
-
+.imageBlock {
+  margin-left: auto;
 }
 
 .text {
   font-size: 30px;
-  width: 40%;
   margin: 50px 0px 50px 0px;
+  width: 400px;
+}
+
+.buttonsMob {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 10%;
+  left: 15%;
+}
+
+.imageBlockMob {
+  position: relative;
+  display: none;
+}
+
+@include lg {
+  .image {
+    height: 500px;
+  }
+  .text {
+    width: 300px;
+  }
+}
+
+@include md {
+  .imageBlockMob {
+    display: block;
+  }
+  .imageBlock {
+    display: none;
+  }
+  .buttons {
+    display: none;
+  }
+  .application {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@include sm {
+  .mobileMob {
+    width: 260px;
+  }
+  .buttonImage {
+    width: 200px;
+  }
+  .buttonsMob {
+    left: 12%;
+  }
+  .text {
+    width: 260px;
+  }
+  
 }
