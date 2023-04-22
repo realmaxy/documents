@@ -1,0 +1,122 @@
+@import '../../sass/mixin';
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0%, 0%, 0%, 0.3);
+}
+
+.cooperationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-box-shadow: 1px 6px 9px 6px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 1px 6px 9px 6px rgba(34, 60, 80, 0.2);
+  box-shadow: 1px 6px 9px 6px rgba(34, 60, 80, 0.2);
+  height: 500px;
+  justify-content: center; 
+  width: max-content;
+  padding: 30px;
+  position: absolute;
+  top: calc(50% - 250px);
+  left: calc(50% - 230px);
+  background-color: #fff;
+}
+
+.submitButton {
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px 0px 0px 0px;
+}
+
+.coopForm {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.title {
+  font-size: 24px;
+  margin: 30px 0px 50px 0px;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  width: 300px;
+  height: 1.2px;
+  background-color: #ccc;
+  position: absolute;
+  bottom: -20px;
+  left: 10%;
+}
+
+.selectServices {
+  width: 400px;
+}
+
+.inputStr {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  width: 400px;
+}
+
+.inputBlock {
+  margin: 15px 0px 15px 0px;
+}
+
+.errorParagraph {
+  color: red;
+  position: absolute;
+}
+
+.exitButton {
+  margin-left: auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@include sm {
+  .inputStr {
+    width: 280px;
+    margin: 10px 0px 10px 0px;
+  }
+  .selectServices {
+    width: 280px;
+  }
+  .submitButton {
+    width: 280px;
+    margin: 10px 0px 10px 0px;
+  }
+  .title {
+    font-size: 24px;
+    width: 280px;
+    text-align: center;
+    margin: 30px 0px 30px 0px;
+  }
+  .title::after {
+    content: "";
+    width: 200px;
+    height: 1.2px;
+    background-color: #ccc;
+    position: absolute;
+    bottom: -20px;
+    left: 15%;
+  }
+  .cooperationForm {
+    padding: 20px;
+    top: calc(50% - 250px);
+    left: calc(50% - 160px);
+  }
+}

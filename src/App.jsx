@@ -1,10 +1,12 @@
+import CooperationForm from './components/CooperationForm/CooperationForm'
 import Landing from './components/Landing/Landing'
 
 function App() {
 
   return (
-    <div>
+    <div className='app'>
       <Landing/>
+      <CooperationForm/>
     </div>
   )
 }

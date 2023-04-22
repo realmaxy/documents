@@ -33,6 +33,12 @@
   display: none;
 }
 
+.logoMob {
+  position: absolute;
+  top: 15%;
+  left: 23%;
+}
+
 @include lg {
   .image {
     height: 500px;
@@ -71,5 +77,8 @@
   .text {
     width: 260px;
   }
-  
+  .logoMob {
+    width: 150px;
+    left: 20%;
+  }
 }
