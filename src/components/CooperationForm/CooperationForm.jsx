@@ -9,17 +9,18 @@ import { openPopUp } from '../../features/popUpSlice'
 export default function CooperationForm() {
 
   
-  const {register, formState:{errors}, handleSubmit} = useForm()
+  const {register, formState:{errors}, handleSubmit, reset} = useForm({mode:"onBlur"})
+
   const onSubmit = (data) => {
+    data = {...data, service: value}
+    reset()
+    setValue('')
     alert(JSON.stringify(data))
   }
-  const [values, setValues] = useState('')
-  const handleChange = (event) => {
-    event.preventDefault()
-    setValues(event.target.value);
-  };
+  
 
   const [services, setServices] = useState(openPopUp())
+  const [value, setValue] = useState('')
 
   const dispatch = useDispatch()
   const open = useSelector(state => state.popUp.isOpen)
@@ -34,8 +35,12 @@ export default function CooperationForm() {
     })
   }, [])
 
-  
-    return(
+  const handleChange = (event) => {
+    event.preventDefault()
+    setValue(event.target.value);
+  };
+
+  return(
     <div>
       {(open)?(
       <div className={s.wrapper}>
@@ -62,20 +67,22 @@ export default function CooperationForm() {
               </div>
             </div>
             <div className={s.inputBlock}>
-              <FormControl fullWidth>
+              <FormControl fullWidth >
                 <InputLabel id="demo-simple-select-label" className={s.inputServices}>Предоставляемые услуги</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="type-select"
-                  value={services}
+                  value={value}
                   label="Предоставляемые услуги"
                   onChange={handleChange}
+                  
                   className={s.selectServices}
                 >
+                {services.map(item => <MenuItem value={item} key={item}>{item}</MenuItem>)}
                 </Select>
               </FormControl>
               <div>
-                {errors?.email && <p className={s.errorParagraph}>{errors?.email?.message}</p>}
+                {value === '' && <p className={s.errorParagraph}>*Выберите услугу</p>}
               </div>
             </div>
             <button className={s.submitButton}>Подать заявку</button>
