@@ -1,0 +1,24 @@
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.messages {
+  position: relative;
+}
+
+.dropdown {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  -webkit-box-shadow: 4px 3px 8px 7px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 3px 8px 7px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 3px 8px 7px rgba(34, 60, 80, 0.2);  
+  border-radius: 10px;
+  position: absolute;
+  top: 40px;
+  left: -130px;
+  background-color: #fff;
+}

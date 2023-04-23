@@ -19,7 +19,7 @@
   width: max-content;
   padding: 30px;
   position: absolute;
-  top: calc(50% - 150px);
+  top: 5%;
   left: calc(50% - 230px);
   background-color: #fff;
 }
@@ -36,7 +36,7 @@
   margin: 20px 0px 0px 0px;
 }
 
-.coopForm {
+.loginForm {
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -48,6 +48,8 @@
   font-size: 24px;
   margin: 30px 0px 50px 0px;
   position: relative;
+  width: 100%;
+  text-align: center;
 }
 
 .title::after {
@@ -57,7 +59,7 @@
   background-color: #ccc;
   position: absolute;
   bottom: -20px;
-  left: 10%;
+  left: 15%;
 }
 
 .selectServices {
@@ -83,10 +85,11 @@
 
 .exitButton {
   margin-left: auto;
-  border: none;
   background: none;
+  border: none;
   cursor: pointer;
 }
+
 
 @include sm {
   .inputStr {

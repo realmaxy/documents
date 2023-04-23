@@ -5,12 +5,12 @@ import burger from '../../assets/bars.svg'
 import { Link } from 'react-scroll'
 
 export default function Burger() {
-  
+
   const [active, setActive] = useState(false)
 
   return (
     <div className={s.menu}>
-      <div className={s.icon} onClick = {() => setActive(!active)} style={(active)?{display:"none"}:{display:"block"}}>
+      <div className={s.icon} onClick = {() => setActive(!active)} style={(active)?{visibility:"hidden"}:{display:"block"}}>
         <img src={burger} alt="burger" width={30}/>
       </div>
       <div className={(active)? [s.list, s.active].join(' ') : s.list}>

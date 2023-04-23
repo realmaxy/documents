@@ -1,0 +1,21 @@
+.message {
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.message:hover {
+  background-color: #ccc;
+  transition: 0.4s ease;
+}
+
+.name {
+  color: blue;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.text {
+  font-size: 14px;
+  margin: 5px 0px 0px 0px;
+}

@@ -3,15 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const popUp = createSlice({
     name: 'openPopUp',
     initialState: {
-        isOpen: false,
+        isOpenRegister: false,
+        isOpenLogin: false,
     },
     reducers: {
-        openPopUp(state) {
-          (state.isOpen)?state.isOpen = false:state.isOpen = true
+        openRegister(state) {
+          (state.isOpenRegister)?state.isOpenRegister = false:state.isOpenRegister = true
         },
+        openLogin(state) {
+          (state.isOpenLogin)?state.isOpenLogin = false:state.isOpenLogin = true
+        }
     },
 })
 
-export const {openPopUp} = popUp.actions
+export const {openRegister, openLogin} = popUp.actions
 
 export default popUp.reducer

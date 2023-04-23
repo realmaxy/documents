@@ -4,41 +4,52 @@ import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/mater
 import { useEffect, useState } from 'react'
 import exit from '../../assets/exit.svg'
 import { useDispatch, useSelector } from 'react-redux'
-import { openPopUp } from '../../features/popUpSlice'
+import { openRegister } from '../../features/popUpSlice'
+import { createUser } from '../../features/userSlice'
 
 export default function CooperationForm() {
 
-  
+  const [services, setServices] = useState([])
+  const [value, setValue] = useState('')
+
+  const dispatch = useDispatch()
+  const open = useSelector(state => state.popUp.isOpenRegister)
+
   const {register, formState:{errors}, handleSubmit, reset} = useForm({mode:"onBlur"})
 
+  // Регистрация пользователя
+
   const onSubmit = async(data) => {
-    data = {...data, description: value}
+    data = {...data, description: value, type: 'organisation'}
     reset()
     setValue('')
     alert(JSON.stringify(data))
     await fetch('http://lkjhytre.pythonanywhere.com/auth', {method: "POST",
     headers: {
-      'Content-Type': 'application/json;charset=utf-8'
+      'Content-Type': 'application/json'
     },
-    body: data})
+    body: JSON.stringify(data)})
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+    dispatch(openRegister())
+    dispatch(createUser(data))
   }
-  
 
-  const [services, setServices] = useState(openPopUp())
-  const [value, setValue] = useState('')
 
-  const dispatch = useDispatch()
-  const open = useSelector(state => state.popUp.isOpen)
-
+  //Запрос сервисов с сервера
   useEffect(()=> {
     fetch('http://lkjhytre.pythonanywhere.com/services', {method: "GET", headers: {
         "token": "Hello world!",
     }})
     .then(res => res.json())
     .then(result=> {
+      // console.log(result.services)
       setServices(result.services)
     })
   }, [])
+
+  //Изменение section
 
   const handleChange = (event) => {
     event.preventDefault()
@@ -50,8 +61,8 @@ export default function CooperationForm() {
       {(open)?(
       <div className={s.wrapper}>
         <div className={s.cooperationForm}>
-          <button className={s.exitButton} onClick={()=> dispatch(openPopUp())}>
-            <img src={exit} alt="" width={30}/>
+          <button className={s.exitButton} onClick={()=> dispatch(openRegister())}>
+            <img src={exit} alt="exit" width={30}/>
           </button>
           <h1 className={s.title}>Форма регистрации поставщика</h1>
           <form onSubmit={handleSubmit(onSubmit)} className={s.coopForm}>
@@ -69,6 +80,14 @@ export default function CooperationForm() {
               />
               <div>
                 {errors?.email && <p className={s.errorParagraph}>{errors?.email?.message}</p>}
+              </div>
+            </div>
+            <div className={s.inputBlock}>
+              <TextField className={s.inputStr} label="Пароль"  type='password'
+                {...register("password", {required: "*Поле обязательно к заполнению"})}
+              />
+              <div>
+                {errors?.password && <p className={s.errorParagraph}>{errors?.password?.message}</p>}
               </div>
             </div>
             <div className={s.inputBlock}>

@@ -17,7 +17,6 @@
 .header{
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .title {
@@ -47,14 +46,28 @@
   justify-content: space-between;
 }
 
+.menu {
+  margin-left: 50px;
+}
+
 .menuLink {
   font-weight: 700;
   cursor: pointer;
 }
 
 .menuLink:hover {
-  color: #686767;
+  color: #585858;
   transition: 0.5s ease;
+}
+
+.userHeader {
+  margin-left: auto;
+}
+
+@include lg {
+  .content {
+    display: none;
+  }
 }
 
 @include md {
@@ -63,6 +76,9 @@
   }
   .content {
     width: 200px;
+  }
+  .header {
+    justify-content: space-between;
   }
 }
 
