@@ -12,3 +12,14 @@ export const messages = [
     msg: "*Прикрепленный файл*"
   }
 ]
+
+export const notifications = [
+  {
+    name: "Init Team", 
+    msg: "Вы приняты в команду"
+  },
+  {
+    name: "ООО СтройМост",
+    msg: "Вам прислали документ"
+  },
+]

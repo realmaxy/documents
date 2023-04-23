@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import Login from '../Login/Login'
 import { NavLink } from 'react-router-dom'
 import Messages from '../Messages/Messages'
+import Notifications from '../Notifications/Notifications'
 
 export default function Header({isProfile}) {
 
@@ -69,7 +70,10 @@ export default function Header({isProfile}) {
                   </div>
                 </div>    
               </NavLink>
-              <Messages/>
+              <div className={s.msgNot}>
+                <Messages/>
+                <Notifications/>
+              </div>
               {isLogin && <UserHeader/>}
             </div>
           </div>
