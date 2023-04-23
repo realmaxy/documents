@@ -23,8 +23,7 @@ export default function CooperationForm() {
     data = {...data, description: value, type: 'organisation'}
     reset()
     setValue('')
-    alert(JSON.stringify(data))
-    await fetch('http://lkjhytre.pythonanywhere.com/auth', {method: "POST",
+    await fetch('https://lkjhytre.pythonanywhere.com/auth', {method: "POST",
     headers: {
       'Content-Type': 'application/json'
     },
@@ -39,7 +38,7 @@ export default function CooperationForm() {
 
   //Запрос сервисов с сервера
   useEffect(()=> {
-    fetch('http://lkjhytre.pythonanywhere.com/services', {method: "GET", headers: {
+    fetch('https://lkjhytre.pythonanywhere.com/services', {method: "GET", headers: {
         "token": "Hello world!",
     }})
     .then(res => res.json())

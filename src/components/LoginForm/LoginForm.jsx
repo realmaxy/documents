@@ -35,7 +35,7 @@ export default function LoginForm() {
     try {const response = await fetch(`http://lkjhytre.pythonanywhere.com/login?email=${email}&password=${pass}`, {method: "GET"})
     const jsonData = await response.json()
     const token = jsonData.token
-    const req = await fetch('http://lkjhytre.pythonanywhere.com/user', {method: "GET", headers: {
+    const req = await fetch('https://lkjhytre.pythonanywhere.com/user', {method: "GET", headers: {
       "token": token
     }})
     const resp = await req.json()
