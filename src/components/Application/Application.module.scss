@@ -27,7 +27,8 @@
   display: flex;
   flex-direction: column;
   bottom: 10%;
-  left: 15%;
+  left: 20%;
+  margin-right: -200px;
 }
 
 .imageBlockMob {
@@ -41,6 +42,7 @@
   left: 23%;
   z-index: 1;
 }
+
 
 @include lg {
   .image {
@@ -72,16 +74,13 @@
     width: 260px;
   }
   .buttonImage {
-    width: 200px;
+    width: 150px;
   }
   .buttonsMob {
-    left: 12%;
+    left: 20%;
   }
   .text {
     width: 260px;
   }
-  .logoMob {
-    width: 150px;
-    left: 20%;
-  }
+  
 }

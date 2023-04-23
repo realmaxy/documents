@@ -1,3 +1,5 @@
+@import '../../sass/mixin';
+
 .loginButton {
   width: 150px;
   border-radius: 5px;
@@ -13,4 +15,10 @@
 .loginButton:hover {
   background-color: #585858;
   transition: 0.5s ease;
+}
+
+@include sm {
+  .loginButton {
+    width: 80px;
+  }
 }

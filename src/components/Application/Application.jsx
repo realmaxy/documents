@@ -2,8 +2,6 @@ import s from './Application.module.scss'
 import appStore from '../../assets/appStore.png'
 import googlePlay from '../../assets/googlePlay.png'
 import mobile from '../../assets/mobile.png'
-import mobileMob from '../../assets/mobileMob.png'
-import logo from '../../assets/logo.png'
 
 export default function Application() {
   return (
@@ -25,8 +23,7 @@ export default function Application() {
           <img src={mobile} alt="mobile" className={s.image}/>
         </div>
         <div className={s.imageBlockMob}>
-          <img src={mobileMob} alt="mobile" className={s.mobileMob}/>
-          <img src={logo} className={s.logoMob}/>
+          <img src={mobile} alt="mobile" className={s.mobileMob}/>
           <div className={s.buttonsMob}>
             <a href="#">
               <img src={appStore} alt="app store" width={250} className={s.buttonImage}/>

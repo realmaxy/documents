@@ -24,12 +24,8 @@ export default function Header({isProfile}) {
             <div className={s.header}>
               <Link to='about' spy={true} smooth={true} offset={50} duration={500} className={s.menuLink}>
                 <div className={s.left}>
-                <img src={logo} alt="logo" width={70} className={s.logo}/>
-                <div className={s.content}>
-                  <h2 className={s.title}>СКЗМК</h2>
-                  <p className={s.text}>Северо-Кавказский Завод Металлоконструкций</p>
+                  <img src={logo} alt="logo" width={150} className={s.logo}/>
                 </div>
-              </div>
               </Link>
               <div className={s.menu}>
                 <ul className={s.list}>
@@ -63,18 +59,14 @@ export default function Header({isProfile}) {
             <div className={s.header}>
               <NavLink to='/documents'>
                 <div className={s.left}>
-                  <img src={logo} alt="logo" width={70} className={s.logo}/>
-                  <div className={s.content}>
-                    <h2 className={s.title}>СКЗМК</h2>
-                    <p className={s.text}>Северо-Кавказский Завод Металлоконструкций</p>
-                  </div>
+                  <img src={logo} alt="logo" width={150} className={s.logo}/>
                 </div>    
               </NavLink>
               <div className={s.msgNot}>
                 <Messages/>
                 <Notifications/>
               </div>
-              {isLogin && <UserHeader/>}
+              {isLogin && <UserHeader isProfile={true}/>}
             </div>
           </div>
         </div>
